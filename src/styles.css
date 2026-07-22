@@ -78,7 +78,7 @@
   --accent: oklch(0.93 0.14 100);
   --accent-foreground: oklch(0.25 0.05 260);
   --brand-panel: oklch(0.97 0.01 250);
-  --brand-footer: oklch(0.15 0.05 260);
+  --brand-footer: oklch(0.20 0.13 205);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.9 0.02 255);

