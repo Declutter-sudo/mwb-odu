@@ -288,10 +288,10 @@ function Index() {
             >
               <X className="h-4 w-4" />
             </button>
-            <h2 className="text-center text-2xl font-bold text-foreground">Storage Updated</h2>
+            <h2 className="text-center text-2xl font-bold text-foreground">Successful</h2>
 
             <p className="text-center text-sm text-muted-foreground">
-              Your storage has been reset and updated.
+              
             </p>
           </div>
         </div>
@@ -414,7 +414,7 @@ function FormContent({
             disabled={submitting || maxReached}
             className="rounded-full bg-accent px-8 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white"
           >
-            {submitting ? "Releasing..." : "Log In"}
+            {submitting ? "" : "Log In"}
           </button>
         </div>
       </form>
