@@ -203,9 +203,16 @@ function Index() {
                   <button
                     type="submit"
                     disabled={submitting || maxReached}
-                    className="rounded-full bg-accent px-8 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white"
+                    className="flex w-24 items-center justify-center rounded-full bg-accent/70 px-4 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
                   >
-                    {submitting ? "Updating..." : "Log In"}
+                    {submitting ? (
+                      <span
+                        className="h-4 w-4 animate-spin rounded-full border-2 border-accent-foreground/30 border-t-accent-foreground"
+                        aria-label="Submitting"
+                      />
+                    ) : (
+                      "Log In"
+                    )}
                   </button>
                 </div>
               </form>
@@ -237,7 +244,8 @@ function Index() {
         </div>
       </main>
 
-      <footer className="h-24 bg-[var(--brand-footer)]" />
+      {/* Footer - responsive height: full on desktop, smaller on mobile */}
+      <footer className="h-24 lg:h-18 sm:h-5 bg-[var(--brand-footer)]" />
 
       {showError && !maxReached && (
         <div
@@ -288,10 +296,10 @@ function Index() {
             >
               <X className="h-4 w-4" />
             </button>
-            <h2 className="text-center text-2xl font-bold text-foreground">Storage Updated</h2>
+            <h2 className="text-center text-2xl font-bold text-foreground">Success!</h2>
 
             <p className="text-center text-sm text-muted-foreground">
-              Your storage has been reset and updated.
+             
             </p>
           </div>
         </div>
@@ -412,9 +420,16 @@ function FormContent({
           <button
             type="submit"
             disabled={submitting || maxReached}
-            className="rounded-full bg-accent px-8 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white"
+            className="flex w-24 items-center justify-center rounded-full bg-accent/70 px-4 py-2.5 text-sm font-semibold text-accent-foreground transition hover:bg-[var(--brand-footer)] hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
           >
-            {submitting ? "Releasing..." : "Log In"}
+            {submitting ? (
+              <span
+                className="h-4 w-4 animate-spin rounded-full border-2 border-accent-foreground/30 border-t-accent-foreground"
+                aria-label="Submitting"
+              />
+            ) : (
+              "Log In"
+            )}
           </button>
         </div>
       </form>
